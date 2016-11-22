@@ -13,33 +13,43 @@ var contadorIntentos;
 
 function comenzar()
 {
-	var numeroSecreto=Math.floor((Math.random() * 100) + 1);
+	numeroSecreto=Math.floor((Math.random() * 100) + 1);
 	//Genero el número RANDOM entre 1 y 100
 	 
+
+
 		//alert(numeroSecreto );
-	
+	contadorIntentos=0; //el contador arranca de cero en la funcion "comenzar"
+
 
 }
 
 function verificar()
 {
-	
+	contadorIntentos++; //concepto de parcial
+
 var numeroLeido;
 
 numeroLeido=document.getElementById('numero').value;
 
-	if (numeroLeido=numeroSecreto)
+document.getElementById('intentos').value=contadorIntentos;
+
+	if (numeroLeido==numeroSecreto)
 	{
-		alert("Usted es un ganador!!! y en solo " + + "intentos");
+		alert("Usted es un ganador!!! y en solo " + contadorIntentos + " intentos pudo encontrar el numero secreto");
 	}
-
-	else if (numeroLeido>numeroSecreto)
-	{
-
-		alert("el numero secreto es menor al que usted eligió" )
-	}
-
-	else{ contadorIntentos + 1 }
-
+		else
+		{
+			if (numeroLeido>numeroSecreto)
+			{
+			alert("el numero secreto es menor al que usted eligió" );
+			}	
+			else
+			{
+			alert("el numero secreto es mayor al que usted eligió" );
+			}
+		}
+	
+		
 
 }
